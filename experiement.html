@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Final Grade Calculator </title>
+</head>
+
+<body>
+
+<p>
+    <h2>Final Grade Calculator</h2>
+    <h4>Please Fill In ALL Sections</h4>
+    <TABLE BORDER=2 CELLSPACING=2 CELLPADDING=2>
+
+    <tr>
+    <td>Type</td>
+    <td>Weight</td>
+    <td>Grade</td>
+    </tr>
+
+    <tr>
+    <td>Quarter 1</td>
+    <td><input type="text" id="weight1" size=2 maxlength="2" value="">%</td>
+    <td><input type="text" id="quarter1" size=2 value=""></td>
+    </tr>
+
+    <tr>
+    <td>Quarter 2</td>
+    <td><input type="text" id="weight2" size=2 maxlength="2" value="">%</td>
+    <td><input type="text" id="quarter2" size=2 value=""></td>
+    </tr>
+
+    <tr>
+    <td>Final Exam</td>
+    <td><input type="text" id="weight3" size=2 maxlength="2" value="">%</td>
+    <td><input type="text" id="finalexam" size=2 value=""></td>
+    </tr>
+
+</p>
+    <input type="button" value="Calculate Your Grade"
+        onclick="calculator()">
+
+    <hr>
+    <div id="outputDiv" style="height: 50px; width: 100%;"></div>
+
+    <script type="text/javascript">
+
+        function calculator()
+        {
+            var grade1=parseFloat(document.getElementById('quarter1').value*(document.getElementById('weight1').value/10));
+            var grade2=parseFloat(document.getElementById('quarter2').value*(document.getElementById('weight2').value/10));
+            var grade3=parseFloat(document.getElementById('finalexam').value*(document.getElementById('weight3').value/10));
+            var total=grade1+grade2+grade3;
+
+            var display=document.getElementById('outputDiv');
+
+            display.innerHTML='Your Final Grade Is: ' +total/10;
+        }
+    </script>
+</body>
+</html>
