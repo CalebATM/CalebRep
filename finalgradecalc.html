@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Final Grade Calculator </title>
+    <link rel = "stylesheet" type = "text/css" href = "calculatorsytle.css">
+</head>
+
+<body>
+    <div class="container">
+      <div class="card">
+        <div class="card-left-side">
+          <h2>
+            Final <br />
+            Grade<br />
+            Calculator
+          </h2>
+        </div>
+        <div class="card-right-side">
+          <input type="text" placeholder="Quarter/Semester 1" id="quarter1"/>
+          <input type="text" placeholder="Quarter/Semester 2" id="quarter2"/>
+          <input type="text" placeholder="Final Exam" id="finalexam"/>
+          <button class="btn" id="btn" onclick="calculator()">Calculate Your Grade</button>
+        </div>
+      </div>
+      <div id="outputDiv" style="height: 50px; width: 100%;"></div>
+      <div><p id="showResult">*Grade weightings are based on AFHS grading system*</p></div>
+    </div>
+    <script type="text/javascript">
+
+        function calculator()
+        {
+            var grade1=parseFloat(document.getElementById('quarter1').value*0.4);
+            var grade2=parseFloat(document.getElementById('quarter2').value*0.4);
+            var grade3=parseFloat(document.getElementById('finalexam').value*0.2);
+            var total=grade1+grade2+grade3;
+
+            var display=document.getElementById('outputDiv');
+
+            display.innerHTML='Your Final Grade Is: ' +total;
+        }
+    </script>
+  </body>
+</html>
