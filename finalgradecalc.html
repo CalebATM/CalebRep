@@ -3,6 +3,9 @@
 <head>
     <title> Final Grade Calculator </title>
     <link rel = "stylesheet" type = "text/css" href = "calculatorstyle.css">
+    <script type="text/javascript">
+      alert("Welcome to the Final Grade Calculator!\nEnter your grades and their weightings to calculate your final grade\nor just play around with the values!")
+    </script>
 </head>
 
 <body>
@@ -16,27 +19,36 @@
           </h2>
         </div>
         <div class="card-right-side">
-          <input type="text" placeholder="Quarter/Semester 1" id="quarter1"/>
-          <input type="text" placeholder="Quarter/Semester 2" id="quarter2"/>
-          <input type="text" placeholder="Final Exam" id="finalexam"/>
+          <div class="block">
+            <input type="number" placeholder="Semester 1 Grade" class="quarter" id="quarter1" max="100"/>
+            <input type="number" placeholder="Weight in %" id="weight1" max="100"/>
+          </div>
+          <div class="block">
+            <input type="number" placeholder="Semester 2 Grade" class="quarter" id="quarter2" max="100"/>
+            <input type="number" placeholder="Weight in %" id="weight2" max="100"/>
+          </div>
+          <div class="block">
+            <input type="number" placeholder="Final Exam" class="quarter" id="finalexam" max="100"/>
+            <input type="number" placeholder="Weight in %" id="weight3" max="100"/>
+          </div>
           <button class="btn" id="btn" onclick="calculator()">Calculate Your Grade</button>
         </div>
       </div>
       <div id="outputDiv" style="height: 50px; width: 100%;"></div>
-      <div><p id="showResult">*Grade weightings are based on AFHS grading system*</p></div>
+      <div><p id="showResult">*Grade weightings must add to 100*</p></div>
     </div>
     <script type="text/javascript">
 
         function calculator()
         {
-            var grade1=parseFloat(document.getElementById('quarter1').value*0.4);
-            var grade2=parseFloat(document.getElementById('quarter2').value*0.4);
-            var grade3=parseFloat(document.getElementById('finalexam').value*0.2);
+            var grade1=parseFloat(document.getElementById('quarter1').value*(document.getElementById('weight1').value/10));
+            var grade2=parseFloat(document.getElementById('quarter2').value*(document.getElementById('weight2').value/10));
+            var grade3=parseFloat(document.getElementById('finalexam').value*(document.getElementById('weight3').value/10));
             var total=grade1+grade2+grade3;
 
             var display=document.getElementById('outputDiv');
 
-            display.innerHTML='Your Final Grade Is: ' +total;
+            display.innerHTML='Your Final Grade Is: ' +total.toFixed(2)/10+'/100';
         }
     </script>
   </body>
