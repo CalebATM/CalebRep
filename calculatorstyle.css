@@ -9,13 +9,13 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(120deg, red, lime);
+    background: linear-gradient(120deg, lime, blue);
   }
   .container {
-    background-color: orange;
+    background-color: rgb(48, 107, 87);
     color: white;
     height: 400px;
-    width: 500px;
+    width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -29,14 +29,14 @@
   }
   .card-right-side {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-left: 3rem;
+    margin-left: 2.25rem;
   }
-  .card-right-side > input {
+  .inputpair > input {
     margin-bottom: 1.25rem;
-    width: 200px;
+    width: 125px;
     padding: 5px 10px;
     background-color: rgba(255, 255, 255, 0.116);
     border: none;
@@ -45,10 +45,13 @@
     font-size: 16px;
     font-weight: 400;
   }
-  .card-right-side > input::placeholder {
+  .inputpair > input::placeholder {
     color: white;
     font-weight: 500;
     font-size: 16px;
+  }
+  .quarter {
+    width: 180px !important;
   }
   .card-right-side > button {
     width: 200px;
@@ -61,15 +64,20 @@
     font-weight: 600;
     font-size: 16px;
   }
+  .card-right-side > button:hover {
+    color: rgb(22, 212, 22);
+  }
   .card-left-side > h2 {
     font-size: 2rem;
     font-weight: 700;
     border-right: 3px solid white;
-    padding-right: 8px;
+    padding-right: 23px;
   }
 
   #outputDiv {
+      font-size: 1.15rem;
+      font-weight: 500;
       text-align: center;
       margin-top: -50px;
-      margin-bottom: -70px;
+      margin-bottom: -80px;
   }
