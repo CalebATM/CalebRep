@@ -3,6 +3,28 @@
     padding: 0;
     box-sizing: border-box;
   }
+  .navbar {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    background: rgb(40, 40, 40);
+  }
+  .navbar > ul > li {
+    font-weight: bold;
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px;
+  }
+  .navbar > ul > li:hover {
+    background-color: rgb(70, 70, 70);
+  }
+  a {
+    color: white;
+    font-weight: normal;
+    text-decoration: none !important;
+  }
   body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
