@@ -23,7 +23,7 @@
   a {
     color: white;
     font-weight: normal;
-    text-decoration: none !important;
+    text-decoration: none;
   }
   body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
